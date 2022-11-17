@@ -33,7 +33,7 @@ export const ActionList = (props: IActionList) => {
         return (
           <Space
             key={sectionName}
-            style={{ marginBottom: 10, marginTop: 10, display: "flex" }}
+            style={{ marginBottom: 10, marginTop: 10, display: 'flex' }}
             direction="vertical"
             size="small"
           >
