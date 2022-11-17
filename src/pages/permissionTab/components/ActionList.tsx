@@ -1,6 +1,6 @@
-import { Checkbox, Space } from 'antd';
-import type { CheckboxValueType } from 'antd/es/checkbox/Group';
-import { Typography } from 'antd';
+import { Checkbox, Space } from "antd";
+import type { CheckboxValueType } from "antd/es/checkbox/Group";
+import { Typography } from "antd";
 
 const { Title } = Typography;
 
@@ -33,7 +33,7 @@ export const ActionList = (props: IActionList) => {
         return (
           <Space
             key={sectionName}
-            style={{ marginBottom: 10, marginTop: 10, display: 'flex', gap: 1 }}
+            style={{ marginBottom: 10, marginTop: 10, display: "flex" }}
             direction="vertical"
             size="small"
           >
