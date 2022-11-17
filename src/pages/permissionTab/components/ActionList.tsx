@@ -1,7 +1,11 @@
-import { Checkbox, Space } from "antd";
-import type { CheckboxValueType } from "antd/es/checkbox/Group";
-import { Typography } from "antd";
-
+import { Checkbox, Space } from 'antd';
+import type { CheckboxValueType } from 'antd/es/checkbox/Group';
+import { Typography } from 'antd';
+import { union, difference, intersection } from 'lodash';
+import {
+  ALL_ACTION_NAMES,
+  getActionsFromSectionActionsMappings,
+} from '../const';
 const { Title } = Typography;
 
 interface IActionList {
@@ -18,8 +22,14 @@ interface IActionList {
 }
 
 export const ActionList = (props: IActionList) => {
+  // ! very complex process
   const onCheckboxGroupChange = (values: CheckboxValueType[]) => {
-    props?.setSelected(values);
+    const restActions = difference(
+      ALL_ACTION_NAMES,
+      getActionsFromSectionActionsMappings(props.searches)
+    );
+    const currentSelected = intersection(props.selected, restActions);
+    props?.setSelected(union(values, currentSelected));
   };
 
   return (

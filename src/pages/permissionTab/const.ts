@@ -24,3 +24,14 @@ export const SECTION_ACTIONS_MAPPINGS: ISearch = {
     { name: 'Edit User', value: 'org:editUser' },
   ],
 };
+
+export const getActionsFromSectionActionsMappings = (mappings: ISearch) => {
+  return Object.values(mappings).reduce((acc, curr) => {
+    const actionNames = curr.map((action) => action.value);
+    return acc.concat(actionNames);
+  }, [] as string[]);
+};
+
+export const ALL_ACTION_NAMES: string[] = getActionsFromSectionActionsMappings(
+  SECTION_ACTIONS_MAPPINGS
+);
