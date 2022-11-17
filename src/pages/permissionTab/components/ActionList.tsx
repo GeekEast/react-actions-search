@@ -1,6 +1,6 @@
-import { Checkbox, Space } from 'antd';
-import type { CheckboxValueType } from 'antd/es/checkbox/Group';
-import { Typography } from 'antd';
+import { Checkbox, Space } from "antd";
+import type { CheckboxValueType } from "antd/es/checkbox/Group";
+import { Typography } from "antd";
 
 const { Title } = Typography;
 
